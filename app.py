@@ -23,8 +23,9 @@ IMG_SIZE = (224, 224)
 
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("modelo_piel.keras")
-
+      # compile=False evita incompatibilidades con optimizadores o métricas guardadas
+    return tf.keras.models.load_model("modelo_piel.keras", compile=False)
+  
 
 model = load_model()
 
